@@ -1,4 +1,4 @@
-var express = require('Express');
+var express = require('express');
 var request = require('request');
 var path = require('path');
 var app = express();
@@ -14,7 +14,6 @@ app.get("/results", function (req, res){
     request(url + Moviename, function(error, response, body){
         if(!error && response.statusCode==200) {
             var parsedData = JSON.parse(body);
-
             res.render("results",{data: parsedData});
         }
         else {
